@@ -1,5 +1,5 @@
 .aqi-page {
-    background: url('/res/aqi/bg.png') no-repeat bottom center transparent;
+    background: url('/res/sections/bg-sec.png') no-repeat center transparent;
     background-size: cover;
 
     .location-box {
@@ -42,6 +42,33 @@
             border: 0.5rem solid #e7e7e7;
             border-radius: 10rem;
             box-shadow: 0px 0px 4px #a7a7a7;
+
+            .counter {
+                margin-top: 1rem;
+                .pre,
+                .post {
+                    font-weight: 300;
+                    display: block;
+                    text-align: center;
+                    font-size: 0.8rem;
+                    color: @primaryTextColor;
+                }
+                .pre {
+                    margin-bottom:0.5rem
+                }
+                h3 {
+                    font-weight: 900;
+                    color: #0d8fec;
+                    font-size: 6rem;
+                    /* position: absolute; */
+                    text-align: center;
+                    display: block;
+                    width: 100%;
+                    margin: 0;
+                    padding: 0;
+                    line-height: 5.4rem;
+                }
+            }
         }
 
         a.question {
@@ -66,6 +93,18 @@
             height: 3rem;
             text-indent: -9999px;
             overflow: hidden;
+        }
+    }
+
+    .button-block {
+        position: absolute;
+        bottom: 1.4rem;
+        left: 0px;
+        display: block;
+        width: 100%;
+
+        .fa {
+            font-size: 0.3rem;
         }
     }
 }
