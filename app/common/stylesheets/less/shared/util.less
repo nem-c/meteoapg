@@ -1,0 +1,85 @@
+/* apply a natural box layout model to all elements */
+*, *:before, *:after {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+/*
+|------------------------------------------------------------
+| Help Classes
+|------------------------------------------------------------
+*/
+
+.display-none { display: none; }
+.display-block { display: block; }
+.display-inline { display: inline; }
+.display-inline-block { display: inline-block; }
+
+.left { float: left; }
+.right { float: right; }
+
+.text-left { text-align: left; }
+.text-right { text-align: right; }
+.text-center { text-align: center; }
+.text-justify { text-align: justify; }
+
+.bold { font-weight: bold; }
+.italic { font-style: italic; }
+.capitalize { text-transform: capitalize; }
+.uppercase { text-transform: uppercase !important; }
+.lowercase { text-transform: lowercase; }
+
+.fixed { position: fixed; }
+
+// MARGINS
+.no-margin { margin: 0 !important; }
+.no-padding { padding: 0 !important; }
+.no-outline { .box-shadow(none) !important; }
+
+.pr40 { padding-right: 40px; padding-right: 4rem; }
+.pl40 { padding-left: 40px; padding-left: 4rem; }
+
+.mr10 { margin-right: 10px !important; }
+.mr20 { margin-right: 20px !important; }
+.mr30 { margin-right: 30px !important; }
+.mr40 { margin-right: 40px !important; }
+.mr50 { margin-right: 50px !important; }
+
+.mt10 { margin-top: 10px; }
+.mt15 { margin-top: 15px; }
+.mt20 { margin-top: 20px; }
+.mt30 { margin-top: 30px; }
+.mt40 { margin-top: 40px; }
+.mt45 { margin-top: 45px; }
+.mt50 { margin-top: 50px; }
+.mt60 { margin-top: 60px; }
+
+.mb10 { margin-bottom: 10px; }
+.mb20 { margin-bottom: 20px; }
+.mb30 { margin-bottom: 30px; }
+.mb40 { margin-bottom: 40px; }
+.mb45 { margin-bottom: 45px; }
+.mb50 { margin-bottom: 50px; }
+
+
+/*
+|------------------------------------------------------------
+| Clearfix
+|------------------------------------------------------------
+*/
+
+.clearfix {
+    zoom:1;
+    &:before, &:after {
+        content: "\0020";
+        display: block;
+        height: 0;
+        overflow: hidden;
+    }
+    &:after {
+        clear: both;
+    }
+}
+
+.clear-left{clear:left;}

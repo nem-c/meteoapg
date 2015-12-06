@@ -1,0 +1,58 @@
+/***********************************************************
+ * These styles apply for native components on iOS.
+ * Read more about native styles at http://docs.appgyver.com
+ ***********************************************************/
+
+navigation-bar {
+    background-color: #dcdcdc;
+    color: #d8d8d8;
+}
+
+navigation-bar title {
+    color: #2c2c2c;
+    font-size: 0.1rem;
+    font-weight: 600;
+    display: none;
+}
+
+navigation-bar button, navigation-bar back-bar-button {
+    color: #ffffff;
+    font-weight: 300;
+}
+
+tab-bar {
+    background-color: #414141;
+    border-top: 1px rgba(0, 0, 0, 0.1) solid;
+    height: 60px !important;
+}
+
+tab-bar tab-bar-item {
+    font-family: "Avenir";
+    font-size: 10px;
+    fill: #ffffff !important;
+    color: #ffffff !important;
+}
+
+tab-bar tab-bar-item:selected {
+    font-weight: 600;
+}
+
+tab-bar-item#aqi {
+    background-image: url(icons/about-button.png);
+    background-size: 64px 20px;
+}
+
+tab-bar-item#alerts {
+    background-image: url(icons/notification-button.png);
+    background-size: 20px 20px;
+}
+
+tab-bar-item#social {
+    background-image: url(icons/shere-button.png);
+    background-size: 20px 20px;
+}
+
+tab-bar-item#report {
+    background-image: url(icons/report-button.png);
+    background-size: 20px 20px;
+}
