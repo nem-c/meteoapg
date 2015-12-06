@@ -1,16 +1,28 @@
 angular
-    .module('pages', ['easypiechart'])
-    .controller('AqiController', function ($scope, supersonic, easypartchar) {
-        $scope.percent = 65;
-        $scope.options = {
-            animate: {
-                duration: 0,
-                enabled: false
-            },
-            barColor: '#2C3E50',
-            scaleColor: false,
-            lineWidth: 20,
-            lineCap: 'circle'
-        };
+    .module('pages')
+    .controller('AqiController', function ($scope, supersonic, $http, apiConfig) {
+        // Get user current location
+        supersonic.device.geolocation.getPosition().then(function (position) {
+            var prom = $http({
+                url: apiConfig.apiEndpoint + "/quality",
+                method: "get",
+                params: {
+                    lat: position.coords.latitude,
+                    lng: position.coords.longitude
+                }
+            });
+
+            prom.then(function (response) {
+                supersonic.logger.debug("Received response from server /api/quality");
+                supersonic.logger.debug("Arguments: ");
+                supersonic.logger.debug(arguments);
+            });
+
+            prom.catch(function () {
+                supersonic.logger.error("Received ERROR response from server /api/quality");
+                supersonic.logger.debug("Arguments: ");
+                supersonic.logger.debug(arguments);
+            });
+        });
     });
 
