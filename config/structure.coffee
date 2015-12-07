@@ -19,11 +19,11 @@ module.exports =
       id: "social"
       location: "pages#social" # URLs are supported!
     }
-    {
-      title: ""
-      id: "report"
-      location: "pages#report" # URLs are supported!
-    }
+#    {
+#      title: ""
+#      id: "report"
+#      location: "pages#report" # URLs are supported!
+#    }
   ]
 
   initialView:
@@ -32,8 +32,8 @@ module.exports =
 
   preloads: [
     {
-      id: "about"
-      location: "pages#about"
+      id: "legend"
+      location: "pages#legend"
     }
   ]
 

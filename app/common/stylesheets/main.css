@@ -3015,8 +3015,8 @@ input#searchbox {
 }
 .aqi-page .base-box .inner-circle .counter h3 {
   font-weight: 900;
-  color: #0d8fec;
   font-size: 6rem;
+  color: #64b139;
   /* position: absolute; */
   text-align: center;
   display: block;
@@ -3024,6 +3024,21 @@ input#searchbox {
   margin: 0;
   padding: 0;
   line-height: 5.4rem;
+}
+.aqi-page .base-box .inner-circle .counter h3.green {
+  color: #64b139;
+}
+.aqi-page .base-box .inner-circle .counter h3.blue {
+  color: #0892e0;
+}
+.aqi-page .base-box .inner-circle .counter h3.yellow {
+  color: #fcb625;
+}
+.aqi-page .base-box .inner-circle .counter h3.purple {
+  color: #845ce8;
+}
+.aqi-page .base-box .inner-circle .counter h3.red {
+  color: #e40005;
 }
 .aqi-page .base-box a.question {
   position: absolute;
@@ -3197,6 +3212,7 @@ input#searchbox {
   padding: 0 1.5rem;
   margin: 0px auto;
   display: inline-block;
+  text-transform: uppercase;
 }
 .button span {
   display: inline-block;

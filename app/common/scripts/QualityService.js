@@ -13,7 +13,6 @@ angular.module('common')
                 if (response.status === 204) {
                     deferred.resolve(null);
                 } else {
-                    supersonic.logger.debug(response.data);
                     deferred.resolve(response.data);
                 }
             }).catch(function () {

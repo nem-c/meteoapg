@@ -1,26 +1,23 @@
 angular.module('common')
     .factory('qualityFactory', function (supersonic, qualityService) {
 
-        var cache = {"data": null};
-
         var initializeCache = function (lat, lng) {
-            supersonic.logger.debug("Initializing cache...");
-            qualityService.get(lat, lng).then(function (response) {
-                supersonic.logger.debug("Cache initialized");
-                cache.data = response;
-                supersonic.logger.debug(cache.data);
-            }).catch(function () {
-                supersonic.logger.debug("Cache NOT initialized!");
+            return qualityService.get(lat, lng).then(function (response) {
+                writeLocalStorage('data', response);
+            }).catch(function (error) {
+                supersonic.logger.error(error);
             });
         }
 
         var getStation = function () {
-            var station = (cache.data !== null) ? cache.data["station"] : null;
+            var data = readLocalStorage('data');
+            var station = (data !== null) ? data.station : null;
             return station;
         }
 
         var getComponents = function () {
-            var components = (cache.data !== null) ? cache.data["components"] : null;
+            var data = readLocalStorage('data');
+            var components = (data !== null) ? data.components : null;
             var result = {};
             for (var sepa_id in components) {
                 if (components.hasOwnProperty(sepa_id) && components[sepa_id]["measurement"] !== null) {
@@ -29,6 +26,18 @@ angular.module('common')
             }
 
             return result;
+        }
+
+        var writeLocalStorage = function (name, data) {
+            alert(data);
+            var stringified = JSON.stringify(data);
+            alert(stringified);
+            localStorage.setItem(name, stringified);
+        }
+
+        var readLocalStorage = function (name) {
+            var cached = localStorage.getItem(name);
+            return JSON.parse(cached);
         }
 
         return {
